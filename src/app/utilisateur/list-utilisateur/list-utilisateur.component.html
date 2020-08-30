@@ -1,0 +1,42 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap alignitems-center
+ pt-3 pb-2 mb-3 border-bottom">
+    <h1>Liste Utilisateurs</h1>
+</div>
+<div class="pricing-header mx-auto">
+    <div class="table-responsive">
+        <table class="table table-bordered table-responsive-sm table-responsive-md
+   table-responsive-lg">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Code</th>
+                    <th scope="col">Mom</th>
+                    <th scope="col">Prenoms</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Telephone</th>
+                    <th scope="col">Adresse</th>
+                    <th scope="col">Login</th>
+                    <th scope="col">Mot de passe</th>
+                    <th class="text-center" scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of listData ">
+                    <th>{{item.id}}</th>
+                    <th>{{item.codeUtil}}</th>
+                    <td>{{item.nomUtil}}</td>
+                    <td>{{item.prenomUtil}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.telephone}}</td>
+                    <td>{{item.adresse}}</td>
+                    <td>{{item.login}}</td>
+                    <td>{{item.motPass}}</td>
+                    <td><button class="btn btn-warning" style="margin-left: 20px;" (click)="selectData(item)">
+                            <i class="fa fa-pencil-square-o"></i></button></td>
+                    <td><button class="btn btn-danger" (click)="removeData(item.id)">
+                            <i class="fa fa-trash-o"></i></button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
